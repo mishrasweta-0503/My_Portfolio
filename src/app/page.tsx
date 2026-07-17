@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../components/layout/Header';
 import About from '../components/sections/About';
 import Experience from '../components/sections/Experience';
+import Projects from '../components/sections/Projects';
+import Contact from '../components/sections/Contact';
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ export default function Home() {
         <main className="max-w-5xl mx-auto px-6 py-12 md:py-24 flex flex-col gap-32">
           <About />
           <Experience />
+          <Projects />
+          <Contact />
         </main>
       </div>
 

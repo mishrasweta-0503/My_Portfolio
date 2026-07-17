@@ -9,7 +9,7 @@ export default function Header(){
                 <a href="#experience" className="hover:text-textMain transition-colors">Experience</a>
                 <a href="#projects" className="hover:text-textMain transition-colors">Projects</a>
                 <a href="#contact" className="hover:text-textMain transition-colors">Contact</a>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="border border-textMuted/30 hover:border-textMain px-3 py-1 rounded transition-all text-textMain">Resume</a>
+                <a href="/SwetaMishraResumeUAE.pdf" target="_blank" rel="noopener noreferrer" className="border border-textMuted/30 hover:border-textMain px-3 py-1 rounded transition-all text-textMain">Resume</a>
             </nav>       
         </div>
     )
