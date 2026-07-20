@@ -18,7 +18,8 @@ export default function Projects() {
       description: "A cross-platform mobile application designed to manage and track item expiration dates seamlessly. Features local state management, real-time data synchronization via Supabase, and automated background push notifications to alert users before critical dates.",
       tags: ["React Native", "Expo", "Supabase", "Zustand", "TypeScript"],
       links: {
-        github: "https://github.com"
+        github: "https://github.com/mishrasweta-0503/ExpiryGuard.git",
+        live: "https://expiryyguard.netlify.app/"
       }
     },
     {
@@ -26,8 +27,8 @@ export default function Projects() {
       description: "A full-featured web application engineered to manage service workflows, relational data models, and user profiles. Implements secure client authentication and is completely optimized with automated build pipelines for live production deployment.",
       tags: ["Python", "Django", "PostgreSQL", "Tailwind CSS", "Render"],
       links: {
-        github: "https://github.com",
-        live: "https://render.com"
+        github: "https://github.com/mishrasweta-0503/FixIt.git",
+        live: "https://fixit-lqc3.onrender.com"
       }
     },
     {
@@ -35,8 +36,8 @@ export default function Projects() {
       description: "An interactive search and detail web application that aggregates real-time forum content. Leverages external platform APIs to deliver fluid data retrieval, dynamic search indexing, and a fully responsive client UI layout.",
       tags: ["React", "TypeScript", "REST APIs", "Tailwind CSS", "CSS Modules"],
       links: {
-        github: "https://github.com",
-        live: "https://netlify.com"
+        github: "https://github.com/mishrasweta-0503/RedditMini.git",
+        live: "https://miniaturereddit.netlify.app/"
       }
     },
     {
@@ -44,7 +45,8 @@ export default function Projects() {
       description: "A full-stack web application designed for developer collaboration. Built with a secure backend relational database schema, user registration forms, route protection middleware, and dynamic server-rendered UI layers.",
       tags: ["Python", "Flask", "PostgreSQL", "SQLAlchemy", "HTML5", "CSS3"],
       links: {
-        github: "https://github.com"
+        github: "https://github.com/mishrasweta-0503/DevStack.git",
+        live: "https://devstack-rjwn.onrender.com"
       }
     },
     {
@@ -52,8 +54,8 @@ export default function Projects() {
       description: "A fast, visually rich application that hooks into media databases to let users browse, query, and filter trending films. Handles asynchronous API concurrency, image placeholder caching, and mobile-friendly layout grids.",
       tags: ["React", "JavaScript", "TMDB API", "Tailwind CSS", "Context API"],
       links: {
-        github: "https://github.com",
-        live: "https://netlify.com"
+        github: "https://github.com/mishrasweta-0503/Movie-Discovery-App.git",
+        live: "https://discoveryourmovie.netlify.app/"
       }
     },
     {
@@ -61,7 +63,8 @@ export default function Projects() {
       description: "A productivity dashboard focused on streamlining the job hunt. Users can track applications, update interview pipelines, manage target dates, and view quick analytics metrics on their overall submission success rate.",
       tags: ["Next.js", "React", "Node.js", "PostgreSQL", "Tailwind CSS"],
       links: {
-        github: "https://github.com"
+        github: "https://github.com/mishrasweta-0503/Job_Application_Tracker.git",
+        live: "https://jobapplicationtracking.netlify.app/"
       }
     },
     {
@@ -69,7 +72,8 @@ export default function Projects() {
       description: "A modern e-commerce storefront currently under active development. Implementing scalable backend product inventory APIs, client-side global shopping cart management, and seamless secure checkout workflows.",
       tags: ["React Native", "Expo", "Node.js", "Express", "PostgreSQL", "Tailwind CSS"],
       links: {
-        github: "https://github.com"
+        github: "https://github.com/mishrasweta-0503/ShopHaven.git",
+        live: "https://render.com"
       }
     }
   ];
