@@ -67,7 +67,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 max-w-4xl mx-auto px-4 sm:px-6 relative z-20">
+    <section id="contact" className="pt-2 pb-8 max-w-4xl mx-auto px-4 sm:px-6">
       
       {/* Section Header */}
       <div className="flex items-center gap-4 mb-12">
@@ -81,13 +81,13 @@ export default function Contact() {
         
         {/* Left Side CTA */}
         <div className="md:col-span-2 space-y-6">
-          <p className="text-sm text-textMuted leading-relaxed">
+          <p className="text-md text-textMuted leading-relaxed">
             I am currently looking for new opportunities as a Full-Stack or React Native Developer! Drop a line and let's build something beautiful together.
           </p>
           <div>
             <a
               href={`mailto:${email}`}
-              className="inline-block font-mono text-xs text-accentColor border border-accentColor bg-transparent px-5 py-3.5 rounded-md font-semibold tracking-wider hover:bg-accentColor/10 transition-all duration-300 cursor-pointer hover:-translate-y-0.5 active:translate-y-0 shadow-sm"
+              className="inline-block font-mono text-md text-accentColor border border-accentColor bg-transparent px-5 py-3.5 rounded-md font-semibold tracking-wider hover:bg-accentColor/10 transition-all duration-300 cursor-pointer hover:-translate-y-0.5 active:translate-y-0 shadow-sm"
             >
               Say Hello 👋
             </a>
@@ -114,7 +114,7 @@ export default function Contact() {
                 <p className="font-mono text-[10px] tracking-widest text-textMuted uppercase">
                   {item.label}
                 </p>
-                <p className="text-sm text-textMain truncate font-medium group-hover:text-accentColor transition-colors mt-0.5">
+                <p className="text-md text-textMain truncate font-medium group-hover:text-accentColor transition-colors mt-0.5">
                   {item.value}
                 </p>
               </div>

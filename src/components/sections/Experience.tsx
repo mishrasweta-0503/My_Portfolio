@@ -132,7 +132,7 @@ export default function Experience() {
 
               <ul className="space-y-4 mb-6">
                 {job.bullets.map((bullet, bIdx) => (
-                  <li key={`b-${idx}-${bIdx}`} className="flex items-start gap-4 text-sm text-textMuted leading-relaxed">
+                  <li key={`b-${idx}-${bIdx}`} className="flex items-start gap-4 text-md text-textMuted leading-relaxed">
                     <span className="text-accentColor mt-1.5 text-xs flex-shrink-0">◆</span>
                     <span className="flex-1">{bullet}</span>
                   </li>
@@ -143,7 +143,7 @@ export default function Experience() {
                 {job.skills.map((skill, sIdx) => (
                   <span
                     key={`s-${idx}-${sIdx}`}
-                    className="bg-accentColor/10 border border-accentColor/20 text-accentColor px-2.5 py-1 rounded-md text-xs font-mono"
+                    className="bg-accentColor/10 border border-accentColor/20 text-accentColor px-2.5 py-1 rounded-md text-sm font-mono"
                   >
                     {skill}
                   </span>

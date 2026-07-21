@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function About() {
   return (
-    <section id="about" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[70vh]">
+    <section id="about" className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-6 items-center py-6 text-lg sm:text-xl">
       
       {/* Left side: Profile image & Orbiting tech stack */}
       <div className="lg:col-span-5 flex justify-center items-center relative h-[350px] w-full">
