@@ -6,6 +6,7 @@ interface Project {
   description: string;
   tags: string[];
   image:string;
+  imagePosition?: string;
   links: {
     github: string;
     live?: string;
@@ -25,7 +26,7 @@ export default function Projects() {
       }
     },
     {
-      title: "FixIt",
+      title: "FixIt1",
       description: "A full-featured web application engineered to manage service workflows, relational data models, and user profiles. Implements secure client authentication and is completely optimized with automated build pipelines for live production deployment.",
       tags: ["Python", "Django", "PostgreSQL", "Tailwind CSS", "Render"],
       image: "/movie_discovery.png",
@@ -48,7 +49,8 @@ export default function Projects() {
       title: "DevStack",
       description: "A full-stack web application designed for developer collaboration. Built with a secure backend relational database schema, user registration forms, route protection middleware, and dynamic server-rendered UI layers.",
       tags: ["Python", "Flask", "PostgreSQL", "SQLAlchemy", "HTML5", "CSS3"],
-      image: "/movie_discovery.png",
+      image: "/devstack.png",
+      imagePosition: "60% center",
       links: {
         github: "https://github.com/mishrasweta-0503/DevStack.git",
         live: "https://devstack-rjwn.onrender.com"
@@ -112,7 +114,6 @@ export default function Projects() {
                 <div>
                   {/* Top Header Row */}
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-xl text-accentColor font-light">📁</span>
                     {isUnderBuild && (
                       <span className="font-mono text-[10px] uppercase tracking-widest text-accentColor bg-accentColor/10 px-2 py-0.5 rounded border border-accentColor/20 animate-pulse">
                         Under Construction
@@ -173,15 +174,19 @@ export default function Projects() {
                 </div>
               </div>
 
-              {/* RIGHT SIDE: CLEAN SCREENSHOT PREVIEW */}
-              <div className="relative md:w-2/5 min-h-[200px] md:min-h-full overflow-hidden bg-slate-950/50 border-t md:border-t-0 md:border-l border-textMuted/10">
-                <div 
-                  className="absolute inset-0 bg-cover bg-center opacity-60 group-hover:opacity-90 group-hover:scale-102 transition-all duration-500"
-                  style={{ backgroundImage: `url(${project.image})` }}
-                />
-                {/* Subtle dark inner shadow to blend the image into the card edges */}
-                <div className="absolute inset-0 bg-gradient-to-r from-slate-950/20 to-transparent pointer-events-none" />
-              </div>
+                {/* RIGHT SIDE: CLEAN SCREENSHOT PREVIEW */}
+                <div className="relative md:w-2/5 min-h-[200px] md:min-h-full overflow-hidden bg-slate-950/50 border-t md:border-t-0 md:border-l border-textMuted/10">
+                  <div 
+                    className="absolute inset-0 bg-cover opacity-60 group-hover:opacity-90 group-hover:scale-102 transition-all duration-500"
+                    style={{ 
+                      backgroundImage: `url(${project.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: project.imagePosition || 'center'
+                    }}
+                  />
+                  {/* Subtle dark inner shadow to blend the image into the card edges */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/20 to-transparent pointer-events-none" />
+                </div>
 
             </div>
           );
