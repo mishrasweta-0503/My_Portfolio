@@ -5,8 +5,7 @@ interface Project {
   title: string;
   description: string;
   tags: string[];
-  image:string;
-  imagePosition?: string;
+  image: string;
   links: {
     github: string;
     live?: string;
@@ -50,7 +49,6 @@ export default function Projects() {
       description: "A full-stack web application designed for developer collaboration. Built with a secure backend relational database schema, user registration forms, route protection middleware, and dynamic server-rendered UI layers.",
       tags: ["Python", "Flask", "PostgreSQL", "SQLAlchemy", "HTML5", "CSS3"],
       image: "/devstack.png",
-      imagePosition: "60% center",
       links: {
         github: "https://github.com/mishrasweta-0503/DevStack.git",
         live: "https://devstack-rjwn.onrender.com"
@@ -87,64 +85,98 @@ export default function Projects() {
       }
     }
   ];
+
   return (
-    <section id="projects" className="pt-6 pb-2 max-w-4xl mx-auto px-4 sm:px-6">
+    <section id="projects" className="pt-6 pb-2 max-w-5xl mx-auto px-4 sm:px-6">
       
       {/* Section Header */}
-      <div className="flex items-center gap-4 mb-10">
+      <div className="flex items-center gap-4 mb-16">
         <h2 className="text-2xl sm:text-3xl font-extrabold text-textMain tracking-tight">
           Things I've Built
         </h2>
         <div className="h-[1px] flex-grow bg-textMuted/20" />
       </div>
 
-      {/* Projects Display Stack (1 column layout for clean image-text separation) */}
-      <div className="space-y-10">
+      {/* Projects Display Stack (Brittany Chiang Overlay Style) */}
+      <div className="space-y-24">
         {projects.map((project, idx) => {
           const isUnderBuild = project.title === "ShopHaven";
-          
+          const isEven = idx % 2 === 0;
+
           return (
             <div
               key={`project-card-${idx}`}
-              className="overflow-hidden bg-slate-900/40 border border-textMuted/10 rounded-xl flex flex-col md:flex-row hover:border-accentColor/40 transition-all duration-300 group shadow-md"
+              className="relative grid grid-cols-12 items-center gap-2 group"
             >
               
-              {/* LEFT SIDE: TEXT DETAILS */}
-              <div className="p-6 md:w-3/5 flex flex-col justify-between relative z-20">
-                <div>
-                  {/* Top Header Row */}
-                  <div className="flex justify-between items-center mb-4">
+              {/* SCREENSHOT PREVIEW (Spans 7 out of 12 columns for maximum visual width) */}
+              <div
+                className={`col-span-12 md:col-span-7 ${
+                  isEven ? 'md:col-start-1' : 'md:col-start-6'
+                } row-start-1 z-10 relative rounded-lg overflow-hidden border border-textMuted/10 bg-slate-900 shadow-xl`}
+              >
+                <a 
+                  href={project.links.live || project.links.github} 
+                  target="_blank" 
+                  rel="noreferrer"
+                  className="block relative aspect-[16/10] overflow-hidden group"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-center filter grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
+                  />
+                  {/* Subtle dark tint over image that disappears on hover */}
+                  <div className="absolute inset-0 bg-slate-950/40 group-hover:bg-transparent transition-colors duration-300" />
+                </a>
+              </div>
+
+              {/* FLOATING TEXT CARD (Spans 7 out of 12 columns, overlapping the image) */}
+              <div
+                className={`col-span-12 md:col-span-7 ${
+                  isEven ? 'md:col-start-6 md:text-right' : 'md:col-start-1 md:text-left'
+                } row-start-1 z-20 flex flex-col justify-center pointer-events-none mt-4 md:mt-0`}
+              >
+                <div className="pointer-events-auto">
+                  {/* Category / Sub-label */}
+                  <div className="flex items-center gap-2 mb-2 justify-start md:justify-end">
                     {isUnderBuild && (
                       <span className="font-mono text-[10px] uppercase tracking-widest text-accentColor bg-accentColor/10 px-2 py-0.5 rounded border border-accentColor/20 animate-pulse">
                         Under Construction
                       </span>
                     )}
+                    <span className="font-mono text-xs text-accentColor tracking-wider">
+                      Featured Project
+                    </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-textMain group-hover:text-accentColor transition-colors mb-3">
-                    {project.title}
+                  <h3 className="text-2xl font-bold text-textMain hover:text-accentColor transition-colors mb-4">
+                    <a href={project.links.live || project.links.github} target="_blank" rel="noreferrer">
+                      {project.title}
+                    </a>
                   </h3>
 
-                  {/* Description */}
-                  <p className="text-md text-textMuted leading-relaxed mb-6">
+                  {/* OVERLAY DESCRIPTION BOX */}
+                  <div className="bg-slate-900/90 backdrop-blur-md p-6 rounded-xl border border-textMuted/15 shadow-2xl text-textMuted text-sm leading-relaxed mb-4">
                     {project.description}
-                  </p>
-                </div>
-
-                {/* Footer Section */}
-                <div>
-                  {/* Tech Tags */}
-                  <div className="flex flex-wrap gap-x-3 gap-y-1 mb-4 font-mono text-md text-textMuted">
-                    {project.tags.map((tag, tIdx) => (
-                      <span key={tIdx} className="text-accentColor/80">
-                        #{tag}
-                      </span>
-                    ))}
                   </div>
 
+                  {/* Tech Tags */}
+                  <ul className={`flex flex-wrap gap-x-4 gap-y-1 mb-4 font-mono text-xs text-textMuted ${
+                    isEven ? 'md:justify-end' : 'md:justify-start'
+                  }`}>
+                    {project.tags.map((tag, tIdx) => (
+                      <li key={tIdx} className="text-accentColor/80">
+                        #{tag}
+                      </li>
+                    ))}
+                  </ul>
+
                   {/* Action Links */}
-                  <div className="flex gap-4 items-center pt-3 border-t border-textMuted/5">
+                  <div className={`flex gap-4 items-center ${
+                    isEven ? 'md:justify-end' : 'md:justify-start'
+                  }`}>
                     <a
                       href={project.links.github}
                       target="_blank"
@@ -174,20 +206,6 @@ export default function Projects() {
                 </div>
               </div>
 
-                {/* RIGHT SIDE: CLEAN SCREENSHOT PREVIEW */}
-                <div className="relative md:w-2/5 min-h-[200px] md:min-h-full overflow-hidden bg-slate-950/50 border-t md:border-t-0 md:border-l border-textMuted/10">
-                  <div 
-                    className="absolute inset-0 bg-cover opacity-60 group-hover:opacity-90 group-hover:scale-102 transition-all duration-500"
-                    style={{ 
-                      backgroundImage: `url(${project.image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: project.imagePosition || 'center'
-                    }}
-                  />
-                  {/* Subtle dark inner shadow to blend the image into the card edges */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/20 to-transparent pointer-events-none" />
-                </div>
-
             </div>
           );
         })}
@@ -195,5 +213,4 @@ export default function Projects() {
 
     </section>
   );
-
 }
